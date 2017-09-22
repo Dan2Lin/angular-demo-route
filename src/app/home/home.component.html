@@ -1,0 +1,35 @@
+<!--<p>
+  我是首页
+</p>-->
+<div class="left left-aside">
+   <div class="navbar">
+     <ul>
+       <li>
+         <div><a routerLink="/home/solution" routerLinkActive="aside-active" class="aside-title">解决方案</a></div>
+       </li>
+       <li>
+         <div><a routerLink="/home/about" routerLinkActive="aside-active" class="aside-title">关于我们</a></div>
+       </li>
+     </ul>
+   </div>
+</div>
+<div class="left content">
+   <router-outlet></router-outlet>
+</div>
+<!--<div class="left">
+  <ol>
+    <li>
+      <div>
+        <h4>使用js跳转路由</h4>
+        <button (click)="toNewsWithoutParam()">去新闻页面</button>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h4>使用js跳转路由-带参数</h4>
+        <button (click)="toNewsWithParam()">去新闻页面</button>
+      </div>
+    </li>
+  </ol>
+
+</div>-->
