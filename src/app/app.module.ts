@@ -8,6 +8,9 @@ import { HotnewsComponent } from './hotnews/hotnews.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { ChatComponent } from './chat/chat.component';
+import { AdminComponent } from './admin/admin.component';
+import {AuthGuardService} from "./service/auth-guard.service";
+import {LoginService} from "./service/login.service";
 
 export const routes: Routes = [
   {
@@ -24,6 +27,11 @@ export const routes: Routes = [
     ]
   },
   {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate :[AuthGuardService]
+  },
+  {
     path: 'news/:nid',
     component: NewsComponent
   },
@@ -31,6 +39,10 @@ export const routes: Routes = [
     path: 'chat',
     component: ChatComponent,
     outlet: 'aux'   //输出到name=aux的插座上
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     /*通配符:默认显示首页*/
@@ -47,13 +59,17 @@ export const routes: Routes = [
     HotnewsComponent,
     WelcomeComponent,
     LoginComponent,
-    ChatComponent
+    ChatComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    AuthGuardService,
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

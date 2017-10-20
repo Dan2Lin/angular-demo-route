@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 .nav-title {
   display: inline-block;
-  width:40px;
+  width:auto;
   height:30px;
   color: firebrick;
   cursor: pointer;
@@ -46,3 +46,14 @@
   line-height: 50px;
   margin:5px auto;
 }
+.chat-nav{
+  float: right;
+  background: lightcoral;
+  line-height: 50px;
+  vertical-align: middle;
+}
+.chat-nav a{
+  text-align: center;
+  color: #fff;
+}
+
