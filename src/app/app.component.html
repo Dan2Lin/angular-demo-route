@@ -1,7 +1,11 @@
 <div class="wrapper">
   <a routerLink="/home"  routerLinkActive="active" class="nav-title home">首页</a>
   <a routerLink="/news"  routerLinkActive="active" class="nav-title news">新闻</a>
+  <a [routerLink] = "[{outlets:{primary:'home',aux:'chat'}}]">开始聊天</a>
+  <a [routerLink] = "[{outlets:{aux: null}}]">结束聊天</a>
 </div>
 <div class="line"></div>
 
 <router-outlet></router-outlet>
+<!--这里显示name为aux的辅助路由-->
+<router-outlet name="aux"></router-outlet>

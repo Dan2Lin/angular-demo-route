@@ -7,6 +7,7 @@ import { SociatyComponent } from './sociaty/sociaty.component';
 import { HotnewsComponent } from './hotnews/hotnews.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
+import { ChatComponent } from './chat/chat.component';
 
 export const routes: Routes = [
   {
@@ -27,6 +28,11 @@ export const routes: Routes = [
     component: NewsComponent
   },
   {
+    path: 'chat',
+    component: ChatComponent,
+    outlet: 'aux'   //输出到name=aux的插座上
+  },
+  {
     /*通配符:默认显示首页*/
     path: '**',
     component: WelcomeComponent
@@ -40,7 +46,8 @@ export const routes: Routes = [
     SociatyComponent,
     HotnewsComponent,
     WelcomeComponent,
-    LoginComponent
+    LoginComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
