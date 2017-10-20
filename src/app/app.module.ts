@@ -11,6 +11,7 @@ import { ChatComponent } from './chat/chat.component';
 import { AdminComponent } from './admin/admin.component';
 import {AuthGuardService} from "./service/auth-guard.service";
 import {LoginService} from "./service/login.service";
+import {DialogService} from "./service/dialog.service";
 
 export const routes: Routes = [
   {
@@ -29,7 +30,8 @@ export const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    canActivate :[AuthGuardService]
+    canActivate :[AuthGuardService],
+    canDeactivate:[AuthGuardService]
   },
   {
     path: 'news/:nid',
@@ -68,7 +70,8 @@ export const routes: Routes = [
   ],
   providers: [
     AuthGuardService,
-    LoginService
+    LoginService,
+    DialogService
   ],
   bootstrap: [AppComponent]
 })
