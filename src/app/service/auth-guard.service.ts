@@ -3,7 +3,6 @@ import {ActivatedRouteSnapshot, CanActivate, CanDeactivate, Router, RouterStateS
 import {Observable} from "rxjs/Observable";
 import {LoginService} from "./login.service";
 import {AdminComponent} from "../admin/admin.component";
-import {observable} from "rxjs/symbol/observable";
 import {DialogService} from "./dialog.service";
 
 @Injectable()
